@@ -4,5 +4,7 @@
       "type": "top-banner"
     }
   },
-  "order": []
+  "order": [
+    "top-banner"
+  ]
 }
