@@ -1,5 +1,8 @@
 {
-  "sections": {    
+  "sections": {   
+    "top_banner": {
+      "type": "top-banner"
+    }
   },
   "order": []
 }
