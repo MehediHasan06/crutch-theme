@@ -9,4 +9,6 @@ mix.js('src/js/app.js', 'assets')
   })
   .copy('src/sections/**', 'sections')
   .copy('src/config/**', 'config')
-  .copy('src/layout/**', 'layout');
+  .copy('src/layout/**', 'layout')
+  .copy('src/snippets/**', 'snippets')
+  .copy('src/templates/**', 'templates');
