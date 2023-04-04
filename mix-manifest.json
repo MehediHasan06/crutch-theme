@@ -7,5 +7,6 @@
     "/config/settings_data.json": "/config/settings_data.json",
     "/config/settings_schema.json": "/config/settings_schema.json",
     "/layout/theme.liquid": "/layout/theme.liquid",
+    "/snippets/pagination.liquid": "/snippets/pagination.liquid",
     "/templates/index.json": "/templates/index.json"
 }
