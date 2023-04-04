@@ -4,6 +4,7 @@ module.exports = {
     './src/layout/*.liquid',
     './src/assets/*.liquid',
     './src/sections/*.liquid',
+    './src/sections/*.json',
     './src/snippets/*.liquid',
     './src/templates/*.liquid',
     './src/templates/*.json',
