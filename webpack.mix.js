@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss')
+const tailwindcss = require('tailwindcss');
 
 mix.js('src/js/app.js', 'assets')
   .sass('src/scss/app.scss', 'assets')
@@ -8,4 +8,5 @@ mix.js('src/js/app.js', 'assets')
     postCss: [ tailwindcss('tailwind.config.js') ],
   })
   .copy('src/sections/**', 'sections')
-  .copy('src/config/**', 'config');
+  .copy('src/config/**', 'config')
+  .copy('src/layout/**', 'layout');

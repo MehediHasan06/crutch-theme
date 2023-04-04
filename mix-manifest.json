@@ -5,5 +5,6 @@
     "/sections/top-banner.liquid": "/sections/top-banner.liquid",
     "/sections/product.liquid": "/sections/product.liquid",
     "/config/settings_data.json": "/config/settings_data.json",
-    "/config/settings_schema.json": "/config/settings_schema.json"
+    "/config/settings_schema.json": "/config/settings_schema.json",
+    "/layout/theme.liquid": "/layout/theme.liquid"
 }
