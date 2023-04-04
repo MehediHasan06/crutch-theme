@@ -1,0 +1,65 @@
+{% for block in section.blocks %}
+    <div class="py-3 {{ section.settings.text_align }}" style="background-color: {{ block.settings.bg_color }}; color: {{ block.settings.text_color }}">
+      {{ block.settings.text }}
+    </div>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "max_blocks": 12,
+  "settings": [
+     {
+       "type": "select",
+       "id": "text_align",
+       "label": "Text alignment",
+       "options": [
+         {
+           "value": "text-left",
+           "label": "Text left"
+         },
+        {
+          "value": "text-center",
+          "label": "Text center"
+        },
+        {
+          "value": "text-right",
+          "label": "Text right"
+        }
+       ]
+     }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Color",
+          "default": "#000"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}
