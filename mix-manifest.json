@@ -2,6 +2,8 @@
     "/assets/app.js": "/assets/app.js",
     "/assets/app.css": "/assets/app.css",
     "/sections/header.liquid": "/sections/header.liquid",
+    "/sections/top-banner.liquid": "/sections/top-banner.liquid",
     "/sections/product.liquid": "/sections/product.liquid",
-    "/sections/top-banner.liquid": "/sections/top-banner.liquid"
+    "/config/settings_data.json": "/config/settings_data.json",
+    "/config/settings_schema.json": "/config/settings_schema.json"
 }

@@ -7,4 +7,5 @@ mix.js('src/js/app.js', 'assets')
     processCssUrls: false,
     postCss: [ tailwindcss('tailwind.config.js') ],
   })
-  .copy('src/sections/**', 'sections');
+  .copy('src/sections/**', 'sections')
+  .copy('src/config/**', 'config');
