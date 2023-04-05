@@ -1,6 +1,7 @@
 {
     "/assets/app.js": "/assets/app.js",
     "/assets/app.css": "/assets/app.css",
+    "/sections/announcement-bar.liquid": "/sections/announcement-bar.liquid",
     "/sections/header.liquid": "/sections/header.liquid",
     "/sections/top-banner.liquid": "/sections/top-banner.liquid",
     "/sections/product.liquid": "/sections/product.liquid",

@@ -1,0 +1,66 @@
+{% for block in section.blocks %}
+    <div 
+      class="py-3 {{ section.settings.text_align }}" 
+      style="background-color: {{ block.settings.bg_color }}; color: {{ block.settings.text_color }}"
+    >
+      {% if block.settings.text_content %}
+        {{ block.settings.text_content }}
+      {% endif %}
+    </div>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "tag": "section",
+  "class": "announcement-bar",
+  "settings": [
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Left"
+        },
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "name": "announcement",
+      "type": "announcement-bar",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_content",
+          "label": "Text Content"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#000"
+        }
+      ]
+    }
+  ]
+
+}
+{% endschema %}

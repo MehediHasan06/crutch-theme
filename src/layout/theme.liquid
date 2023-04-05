@@ -13,9 +13,11 @@
     <!-- Tailwind & Alpine plugin -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+
   </head>
   <body>
     
+    {% section 'announcement-bar' %}
     <main role="main">{{ content_for_layout }}</main>
     
   </body>
