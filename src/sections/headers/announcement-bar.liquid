@@ -3,7 +3,9 @@
       class="py-3 {{ section.settings.text_align }}" 
       style="background-color: {{ block.settings.bg_color }}; color: {{ block.settings.text_color }}"
     >
-      <p>{{ block.settings.text_content }}</p>
+      {% if block.settings.text_content %}
+        {{ block.settings.text_content }}
+      {% endif %}
     </div>
 {% endfor %}
 
