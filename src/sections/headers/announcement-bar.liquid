@@ -3,58 +3,62 @@
       class="py-3 {{ section.settings.text_align }}" 
       style="background-color: {{ block.settings.bg_color }}; color: {{ block.settings.text_color }}"
     >
-      {{ block.settings.text }}
+      <p>{{ block.settings.text_content }}</p>
     </div>
 {% endfor %}
 
 {% schema %}
 {
   "name": "Announcement Bar",
+  "tag": "section",
+  "class": "announcement-bar",
   "settings": [
     {
       "type": "select",
       "id": "text_align",
-      "label": "Text alignment",
+      "label": "Text Alignment",
       "options": [
         {
           "value": "text-left",
-          "label": "Text left"
+          "label": "Left"
         },
         {
           "value": "text-center",
-          "label": "Text center"
+          "label": "Center"
         },
         {
           "value": "text-right",
-          "label": "Text right"
+          "label": "Right"
         }
       ]
     }
   ],
+  "max_blocks": 3,
   "blocks": [
     {
-      "type": "announcement",
       "name": "announcement",
+      "type": "announcement-bar",
       "settings": [
         {
           "type": "richtext",
-          "id": "text",
-          "label": "Text"
+          "id": "text_content",
+          "label": "Text Content"
         },
         {
           "type": "color",
           "id": "bg_color",
-          "label": "Background color",
+          "label": "Background Color",
           "default": "#fff"
         },
         {
           "type": "color",
           "id": "text_color",
-          "label": "Color",
+          "label": "Text Color",
           "default": "#000"
         }
       ]
     }
   ]
+
 }
 {% endschema %}
