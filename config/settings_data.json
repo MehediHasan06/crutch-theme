@@ -1,6 +1,32 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "1bdb1e72-b116-4361-9ed2-6c4fea1634f3": {
+            "type": "announcement-bar",
+            "settings": {
+              "text_content": "<p>Welcome to our store<\/p>",
+              "bg_color": "#af9090",
+              "text_color": "#fdfdfd"
+            }
+          }
+        },
+        "block_order": [
+          "1bdb1e72-b116-4361-9ed2-6c4fea1634f3"
+        ],
+        "settings": {
+          "text_align": "text-center"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+    }
   }
 }
