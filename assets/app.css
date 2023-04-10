@@ -477,3 +477,28 @@ video {
   --tw-text-opacity: 1;
   color: rgb(34 197 94 / var(--tw-text-opacity));
 }
+.header {
+  display: grid;
+  grid-template-areas: "header-logo header-menu header-icons";
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.header .header_logo {
+  grid-area: header-logo;
+}
+.header .header_menu {
+  grid-area: header-menu;
+}
+.header .header_icons {
+  grid-area: header-icons;
+}
+@media (max-width: 768px) {
+  .header {
+    grid-template-areas: "header-menu header-logo header-icons";
+  }
+}
+.header .nav_item:hover .nav__item-submenu {
+  display: block;
+}
+.header .nav_item .nav__item-submenu {
+  display: none;
+}
