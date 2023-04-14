@@ -9,5 +9,7 @@
     "/config/settings_schema.json": "/config/settings_schema.json",
     "/layout/theme.liquid": "/layout/theme.liquid",
     "/snippets/pagination.liquid": "/snippets/pagination.liquid",
-    "/templates/index.json": "/templates/index.json"
+    "/templates/index.json": "/templates/index.json",
+    "/snippets/icon-account.liquid": "/snippets/icon-account.liquid",
+    "/snippets/icon-cart.liquid": "/snippets/icon-cart.liquid"
 }
