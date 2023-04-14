@@ -1,6 +1,7 @@
 <header class="items-center header page-width">
 
-  <div class="mx-auto my-2 header_logo md:my-0 md:mr-auto md:ml-0" style="max-width: {{ section.settings.logo_width }}px;">
+  <!-- Header Logo -->
+  <div class="mx-auto my-2 header_logo" style="max-width: {{ section.settings.logo_width }}px;">
     {% if section.settings.logo != blank %}
       <a href="/" class="header_logo">
         {{ section.settings.logo | image_url: width: 400 | image_tag: loading: 'lazy' }}
@@ -11,14 +12,15 @@
       </a>
     {% endif %}
   </div>
-
-  <nav class="flex header_menu" x-data>      
-    <ul class="hidden header_menu-nav md:flex">
+  
+  <!-- Header Menu -->
+  <nav class="flex header_menu">      
+    <ul class="hidden header_menu-nav">
       {% for link in section.settings.menu.links %}
         {% if link.links != blank %}
-          <li class="relative block px-4 py-5 nav__item">
+          <li class="relative block px-4 py-5 nav_item">
             <a href="{{ link.url }}">{{ link.title }}</a>
-            <ul class="nav__item-submenu absolute bg-white border py-3 px-4 min-w-[160px] top-16 left-1/2 transform -translate-x-1/2">
+            <ul class="nav_item-submenu absolute bg-white border py-3 px-4 min-w-[160px] top-16 left-1/2 transform -translate-x-1/2">
               {% for sublink in linklists[link.handle].links %}
                 <li>
                   <a class="block py-1 hover:opacity-75 " href="{{ sublink.url }}">
@@ -37,28 +39,94 @@
     </ul>
   </nav>
 
+  <!-- Header Icons -->
   <div class="flex items-center justify-end space-x-5 header_icons">
-      {%- if shop.customer_accounts_enabled -%}
+      {% if shop.customer_accounts_enabled %}
         <div class="relative z-10 account-menu-wrapper">
           <a href="{{ routes.account_url }}" 
             title="account link"
-            class="block text-center header__icon">
+            class="block text-center header_icon">
             {% render 'icon-account', class: 'w-10 mx-auto' %}
           </a>
         </div>
-      {%- endif -%}
+      {% endif %}
 
         <button 
           type="button"
           title="Cart button"
-          @click="$dispatch('toggle-cart')"
-          class="relative text-center header__icon">
+          class="relative text-center header_icon">
             {% render 'icon-cart', class: 'w-10' %}
             <span class="sr-only">{{ 'templates.cart.cart' | t }}</span>
-            <span x-text="cart_count" class="cart__count min-w-[22px] text-sm min-h-[22px] absolute grid place-content-center rounded-full -top-3 -right-1 text-white bg-black"> {{ cart.item_count }} </span>
+            <span x-text="cart_count" class="cart_count min-w-[22px] text-sm min-h-[22px] absolute grid place-content-center rounded-full -top-3 -right-1 text-white bg-black"> {{ cart.item_count }} </span>
         </button>
   </div>
 
 </header>  
 
 
+{% schema %}
+{
+  "name": "Header", 
+  "tag": "section", 
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Store Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "px",
+      "label": "Custom logo width"
+      
+    },
+    {
+      "type": "header",
+      "content": "Header Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line_separator",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_header",
+      "default": true,
+      "label": "t:sections.header.settings.enable_sticky_header.label",
+      "info": "t:sections.header.settings.enable_sticky_header.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.header.settings.margin_bottom.label",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

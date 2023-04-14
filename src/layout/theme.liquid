@@ -14,10 +14,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
 
+    <!-- custom css and js link -->
+    <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
+    <script src="{{ 'app.js' | asset_url }}"></script>
+
   </head>
   <body>
     
     {% section 'announcement-bar' %}
+    {% section 'header' %}
     <main role="main">{{ content_for_layout }}</main>
     
   </body>

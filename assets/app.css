@@ -496,9 +496,9 @@ video {
     grid-template-areas: "header-menu header-logo header-icons";
   }
 }
-.header .nav_item:hover .nav__item-submenu {
+.header .nav_item:hover .nav_item-submenu {
   display: block;
 }
-.header .nav_item .nav__item-submenu {
+.header .nav_item .nav_item-submenu {
   display: none;
 }

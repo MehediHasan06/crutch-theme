@@ -23,12 +23,12 @@
   // submenu
   .nav_item{
     &:hover{
-      .nav__item-submenu{
+      .nav_item-submenu{
         display: block;
       }
     }
 
-    .nav__item-submenu{
+    .nav_item-submenu{
       display: none;
     }
   }
