@@ -23,13 +23,24 @@
   // submenu
   .nav_item{
     &:hover{
-      .nav_item-submenu{
+      .dropdown-child{
         display: block;
       }
     }
 
-    .nav_item-submenu{
+    .dropdown-child{
       display: none;
     }
   }
+  .child_nav_item{
+    &:hover{
+      .dropdown-grandchild{
+        display: block;
+      }
+    }
+    .dropdown-grandchild{
+      display: none;
+    }
+  }
+
 }

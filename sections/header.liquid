@@ -15,26 +15,34 @@
   
   <!-- Header Menu -->
   <nav class="flex header_menu">      
-    <ul class="hidden header_menu-nav">
+    <ul class="hidden md:flex">
+
       {% for link in section.settings.menu.links %}
-        {% if link.links != blank %}
-          <li class="relative block px-4 py-5 nav_item">
-            <a href="{{ link.url }}">{{ link.title }}</a>
-            <ul class="nav_item-submenu absolute bg-white border py-3 px-4 min-w-[160px] top-16 left-1/2 transform -translate-x-1/2">
-              {% for sublink in linklists[link.handle].links %}
-                <li>
-                  <a class="block py-1 hover:opacity-75 " href="{{ sublink.url }}">
-                    {{ sublink.title }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </li>
-        {% else %}
-          <li>
-            <a class="block px-4 py-5 nav__item" href="{{ link.url }}"> {{ link.title }}</a>
-          </li>
+        <li class="relative block px-4 py-5 hover:underline nav_item">
+          <a class="block px-4 py-5" href="{{ link.url }}">{{ link.title }}</a>
+
+        <!-- dropdown child -->
+        {% if link.links.size > 0 %}
+          <ul class="dropdown-child absolute bg-white border py-3 px-4 min-w-[160px] top-16 left-1/2 transform -translate-x-1/2">
+            {% for child_link in link.links %}
+              <li class="relative block py-1 hover:underline child_nav_item">
+                <a class="block px-4 py-5" href="{{ child_link.url }}">{{ child_link.title }}</a>
+
+                <!-- dropdown grandchild -->
+                {% if child_link.links.size > 0 %}
+                  <ul class="dropdown-grandchild absolute bg-white border py-3 px-4 min-w-[160px] top-6 left-[200px] transform -translate-x-1/2">
+                    {% for grandchild_link in child_link.links %}
+                      <li class="block py-1 hover:underline">
+                        <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>  
         {% endif %}
+        </li>
       {% endfor %}
     </ul>
   </nav>
@@ -98,34 +106,7 @@
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
-      "label": "t:sections.header.settings.menu.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_line_separator",
-      "default": true,
-      "label": "t:sections.header.settings.show_line_separator.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_sticky_header",
-      "default": true,
-      "label": "t:sections.header.settings.enable_sticky_header.label",
-      "info": "t:sections.header.settings.enable_sticky_header.info"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.spacing"
-    },
-    {
-      "type": "range",
-      "id": "margin_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.header.settings.margin_bottom.label",
-      "default": 0
+      "label": "Menu"
     }
   ]
 }

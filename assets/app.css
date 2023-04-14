@@ -496,9 +496,15 @@ video {
     grid-template-areas: "header-menu header-logo header-icons";
   }
 }
-.header .nav_item:hover .nav_item-submenu {
+.header .nav_item:hover .dropdown-child {
   display: block;
 }
-.header .nav_item .nav_item-submenu {
+.header .nav_item .dropdown-child {
+  display: none;
+}
+.header .child_nav_item:hover .dropdown-grandchild {
+  display: block;
+}
+.header .child_nav_item .dropdown-grandchild {
   display: none;
 }
